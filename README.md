@@ -3,6 +3,15 @@
 A modern **Bank Management System** built with **Python, Flask, and SQLite**.
 The project simulates basic banking operations with user authentication, customer management, and account transactions.
 
+## 📸 Screenshots
+
+### Login Page
+![Login](screenshots/login.png)
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+
 ## 🚀 Features
 
 * 🔐 User Authentication (Login / Register)
