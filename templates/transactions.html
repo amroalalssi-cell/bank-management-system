@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Transactions
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<h1 class="page-title">
+    Transaction History
+</h1>
+
+
+
+<table class="table">
+
+<thead>
+
+<tr>
+
+<th>Type</th>
+<th>Amount</th>
+<th>Description</th>
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+
+<tbody>
+
+
+{% for transaction in transactions %}
+
+<tr>
+
+<td>{{ transaction[0] }}</td>
+
+<td>{{ transaction[1] }} $</td>
+
+<td>{{ transaction[2] }}</td>
+
+<td>{{ transaction[3] }}</td>
+
+
+</tr>
+
+
+{% endfor %}
+
+
+</tbody>
+
+
+</table>
+
+
+{% endblock %}

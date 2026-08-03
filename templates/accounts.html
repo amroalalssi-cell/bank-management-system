@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Accounts
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<h1 class="page-title">
+    Accounts
+</h1>
+
+
+
+<table class="table">
+
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Customer</th>
+<th>Account Number</th>
+<th>Type</th>
+{% if is_admin %}
+<th>Balance</th>
+{% endif %}
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+
+
+<tbody>
+
+
+{% for account in accounts %}
+
+{% set is_owner = (my_customer_id is not none) and (account[5]|string == my_customer_id|string) %}
+
+<tr>
+
+<td>{{ account[0] }}</td>
+
+<td>{{ account[1] }}</td>
+
+<td>{{ account[2] }}</td>
+
+<td>{{ account[3] }}</td>
+
+{% if is_admin %}
+<td>{{ account[4] }} $</td>
+{% endif %}
+
+
+<td>
+
+    {% if is_admin or is_owner %}
+
+    <a href="/view_account/{{ account[0] }}" class="view-btn">
+        View
+    </a>
+
+
+    <a href="/deposit" class="deposit-btn">
+        Deposit
+    </a>
+
+
+    <a href="/withdraw" class="withdraw-btn">
+        Withdraw
+    </a>
+
+
+    <a href="/transactions/{{ account[0] }}" class="history-btn">
+    History
+    </a>
+    <a href="/transfer" class="transfer-btn">
+    Transfer
+</a>
+
+    {% else %}
+
+    <span style="color:#666;">—</span>
+
+    {% endif %}
+
+</td>
+</tr>
+
+
+{% endfor %}
+
+
+</tbody>
+
+
+</table>
+
+
+{% endblock %}

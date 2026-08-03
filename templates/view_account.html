@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+View Account
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<h1 class="page-title">
+    Account Details
+</h1>
+
+
+<div class="card">
+
+
+<p>
+Customer: {{ account[1] }}
+</p>
+
+
+<p>
+Account Number: {{ account[2] }}
+</p>
+
+
+<p>
+Type: {{ account[3] }}
+</p>
+
+
+<p>
+Balance: {{ account[4] }} $
+</p>
+
+
+</div>
+
+
+{% endblock %}

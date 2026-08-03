@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Transfer Money
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<h1 class="page-title">
+    Transfer Money
+</h1>
+
+
+
+<form method="POST" class="form-card">
+
+
+    <input 
+    type="number"
+    name="sender_id"
+    placeholder="Sender Account ID"
+    required
+    >
+
+
+
+    <input 
+    type="number"
+    name="receiver_id"
+    placeholder="Receiver Account ID"
+    required
+    >
+
+
+
+    <input 
+    type="number"
+    name="amount"
+    placeholder="Amount"
+    required
+    >
+
+
+
+    <button type="submit">
+        Transfer
+    </button>
+
+
+</form>
+
+
+
+{% endblock %}

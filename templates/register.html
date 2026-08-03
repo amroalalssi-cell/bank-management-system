@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Register
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<h1 class="page-title">
+    Create Account
+</h1>
+
+
+
+<form method="POST" class="form-card">
+
+
+    <input 
+    type="text"
+    name="username"
+    placeholder="Username"
+    required
+    >
+
+
+
+    <input 
+    type="password"
+    name="password"
+    placeholder="Password"
+    required
+    >
+
+
+
+    <input
+    type="number"
+    name="customer_id"
+    placeholder="Customer ID (optional)"
+    >
+
+
+
+    <button type="submit">
+        Register
+    </button>
+
+
+</form>
+
+
+{% endblock %}

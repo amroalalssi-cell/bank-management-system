@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Create Account
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<h1 class="page-title">
+    Create Bank Account
+</h1>
+
+
+<p>
+    Customer ID: {{ customer_id }}
+</p>
+
+
+<form method="POST" class="form-card">
+
+
+    <input 
+    type="text"
+    name="account_number"
+    placeholder="Account Number"
+    required
+    >
+
+
+
+    <select name="account_type">
+
+
+        <option value="Saving">
+            Saving Account
+        </option>
+
+
+        <option value="Current">
+            Current Account
+        </option>
+
+
+    </select>
+
+
+
+    <button type="submit">
+        Create Account
+    </button>
+
+
+</form>
+
+
+
+{% endblock %}

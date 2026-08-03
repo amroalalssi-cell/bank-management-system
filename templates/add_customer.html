@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}
+Add Customer
+{% endblock %}
+
+
+{% block content %}
+
+<h1 class="page-title">Add Customer</h1>
+
+
+<form method="POST" class="form-card">
+
+
+    <input 
+        type="text" 
+        name="full_name" 
+        placeholder="Full Name"
+        minlength="3"
+        required
+    >
+
+
+    <input 
+        type="text" 
+        name="national_id" 
+        placeholder="National ID"
+        pattern="[0-9]{9}"
+        maxlength="9"
+        required
+    >
+
+
+    <input 
+        type="text" 
+        name="phone" 
+        placeholder="Phone Number"
+        pattern="[0-9]{9,10}"
+    >
+
+
+    <input 
+        type="email" 
+        name="email" 
+        placeholder="Email Address"
+    >
+
+
+    <button type="submit">
+        Add Customer
+    </button>
+
+
+</form>
+
+
+{% endblock %}

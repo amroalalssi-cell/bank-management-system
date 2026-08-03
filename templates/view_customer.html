@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+View Customer
+{% endblock %}
+
+
+{% block content %}
+
+<h1>Customer Details</h1>
+
+
+<div class="card">
+
+    <p>Name: {{ customer[1] }}</p>
+
+    <p>National ID: {{ customer[2] }}</p>
+
+    <p>Phone: {{ customer[3] }}</p>
+
+    <p>Email: {{ customer[4] }}</p>
+
+</div>
+
+
+{% endblock %}

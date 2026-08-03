@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+
+<h1 class="page-title">Dashboard</h1>
+
+<div class="dashboard-grid">
+
+    <div class="dashboard-card">
+        <h3>Total Customers</h3>
+        <h2>{{ total_customers }}</h2>
+    </div>
+
+    <div class="dashboard-card">
+        <h3>Total Accounts</h3>
+        <h2>{{ total_accounts }}</h2>
+    </div>
+
+    <div class="dashboard-card">
+        <h3>Total Balance</h3>
+        <h2>{{ total_balance }} $</h2>
+    </div>
+
+</div>
+
+<div class="quick-actions">
+
+    <a href="/accounts" class="action-btn">
+        Accounts
+    </a>
+
+    <a href="/deposit" class="action-btn">
+        Deposit
+    </a>
+
+    <a href="/withdraw" class="action-btn">
+        Withdraw
+    </a>
+
+    <a href="/transfer" class="action-btn">
+        Transfer
+    </a>
+
+</div>
+
+{% endblock %}

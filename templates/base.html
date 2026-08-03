@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>
+{% block title %}
+Bank System
+{% endblock %}
+</title>
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <h1>My Bank</h1>
+
+
+    <nav>
+
+        <a href="/">Home</a>
+
+        {% if session.get("username") %}
+
+            <a href="/dashboard">Dashboard</a>
+
+            {% if session.get("role") == "Admin" %}
+                <a href="/customers">Customers</a>
+            {% endif %}
+
+            <a href="/accounts">Accounts</a>
+
+            <a href="/deposit">Deposit</a>
+
+            <a href="/withdraw">Withdraw</a>
+
+            <a href="/transfer">Transfer</a>
+
+            {% if session.get("role") == "Admin" %}
+                <a href="/add_customer">Add Customer</a>
+            {% endif %}
+
+            <a href="/logout">Logout</a>
+
+        {% else %}
+
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+
+        {% endif %}
+
+
+    </nav>
+
+</header>
+
+
+
+<main>
+
+<!-- Flash Messages -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-messages">
+        {% for category, message in messages %}
+            <div class="alert {{ category }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+
+{% block content %}
+
+{% endblock %}
+
+</main>
+
+
+
+<footer>
+
+<p>
+Bank Management System © 2026
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

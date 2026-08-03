@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Withdraw
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<h1 class="page-title">
+    Withdraw Money
+</h1>
+
+
+
+<form method="POST" class="form-card">
+
+
+    <input 
+    type="number"
+    name="account_id"
+    placeholder="Account ID"
+    required
+    >
+
+
+    <input
+    type="number"
+    name="amount"
+    placeholder="Amount"
+    required
+    >
+
+
+
+    <button type="submit">
+        Withdraw
+    </button>
+
+
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}
+Edit Customer
+{% endblock %}
+
+{% block content %}
+
+<h1 class="page-title">Edit Customer</h1>
+
+<form method="POST" class="form-card">
+
+    <input
+        type="text"
+        name="full_name"
+        value="{{ customer[1] }}"
+        required
+    >
+
+    <input
+        type="text"
+        name="national_id"
+        value="{{ customer[2] }}"
+        required
+    >
+
+    <input
+        type="text"
+        name="phone"
+        value="{{ customer[3] }}"
+    >
+
+    <input
+        type="email"
+        name="email"
+        value="{{ customer[4] }}"
+    >
+
+    <button type="submit">
+        Update Customer
+    </button>
+
+</form>
+
+{% endblock %}
